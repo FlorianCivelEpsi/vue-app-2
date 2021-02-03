@@ -13,6 +13,10 @@ export default {
   name: 'Home',
   components: {
     Search
-  }
+  },
+  methods: {
+
+    }
+
 }
 </script>

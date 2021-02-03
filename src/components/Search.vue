@@ -8,14 +8,26 @@
         <input v-model = "park" placeholder="Nom parking">
         {{ park }}
         <br>
+        
       <nav v-bind:class="active" v-on:click.prevent>
-		<a href="" class="home" v-on:click="makeActive('parkVelo')">Parking vélo</a>
+		<a href="" class="home" v-on:click="toggleActive('parkVelo')">Parking vélo</a>
 		<a href="#" class="projects" v-on:click="makeActive('parkMoto')">Parking moto</a>
 		<a href="" class="services" v-on:click="makeActive('pmr')">Accès PMR</a>
 		<a href="#" class="contact" v-on:click="makeActive('paiement')">Moyen paiement</a>
-      </nav>
-    <p>You chose <b>{{active}}</b></p>
-    
+      </nav>   
+
+    <p>You chose <b>{{active}}</b></p>  
+
+    <!--
+    <li v-for="service in services" v-on:click="toggleActive(service)" v-bind:key="{ 'active': service.active}">
+
+			Display the name and price for every entry in the array .
+                 Vue.js has a built in currency filter for formatting the price 
+
+			{{service.name}}  
+
+		</li>
+    -->
   </div>
 </template>
 
@@ -28,15 +40,33 @@ export default {
 	data: {
     msg: String,
     active: 'pmr',
-    park: null
+    park: null,
+    services: [
+    {
+      name: 'parkVelo',
+      active:true
+    },{
+      name: 'parkMoto', 
+      active:false
+    },{
+      name: 'pmr',
+      active:true
+    },{
+      name: 'paiement',
+      active:false
+    }
+  ]
 	},
 
 	methods: {
 		makeActive: function(item){
 		
 			this.active = item;
-		}
-	
+    },
+    toggleActive: function(s){
+            s.active = !s.active;
+    	},
+    		
 	}
 }
 </script>
