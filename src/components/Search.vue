@@ -10,9 +10,8 @@
 		<a href="#"  v-on:click="makeActive('paiement')">Moyen paiement</a>
       </nav>   
 	-->
-	{{test}}
-	<br>
-	<pre>{{ info }}</pre>
+    
+	
     <!--
     <li v-for="service in services" v-on:click="toggleActive(service)" v-bind:key="{ 'active': service.active}">
 
@@ -27,6 +26,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   
  name: 'Search',
@@ -36,12 +37,7 @@ export default {
 	namePark: 'Parking%20Cit%C3%A9%20des%20Congr%C3%A8s'
   },  
   methods: {
-	  researche(){
-		    axios
-            .get(url + namePark)
-            .then(response => (this.info = response.data))
-            .catch(error => console.log(error))
-	  }
+	
   },
 	 
      
