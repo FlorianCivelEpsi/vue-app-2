@@ -6,21 +6,23 @@
 
     <p>
       Veuillez rechercher votre position ou parking spécifique : 
-      </p>
-      <br>
-        <input v-model = "parkin" placeholder="Nom parking">
-		<br>
-        {{parkin}}
-        <br>
+    </p>
+    
+	
+     
         
-      <nav v-bind:class="active" v-on:click.prevent>
+    <!-- 
+	  <nav v-bind:class="active" v-on:click.prevent>
 		<a href="" v-on:click="toggleActive('parkVelo')">Parking vélo</a>
 		<a href="#"  v-on:click="makeActive('parkMoto')">Parking moto</a>
 		<a href=""  v-on:click="makeActive('pmr')">Accès PMR</a>
 		<a href="#"  v-on:click="makeActive('paiement')">Moyen paiement</a>
       </nav>   
+	-->
 
+	<br>
 
+	
     <!--
     <li v-for="service in services" v-on:click="toggleActive(service)" v-bind:key="{ 'active': service.active}">
 
@@ -29,7 +31,7 @@
 
 			{{service.name}}  
 
-		</li>
+	</li>
     -->
   </div>
 </template>
