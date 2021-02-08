@@ -1,22 +1,25 @@
 <template>
-  <div id="main">
-    <h1>{{ msg }}</h1>
+  <div id="app">
+	      <h1>{{ msg }}</h1>
+
+	  
+
     <p>
       Veuillez rechercher votre position ou parking spécifique : 
       </p>
       <br>
-        <input v-model = "park" placeholder="Nom parking">
-        {{ park }}
+        <input v-model = "parkin" placeholder="Nom parking">
+		<br>
+        {{parkin}}
         <br>
         
       <nav v-bind:class="active" v-on:click.prevent>
-		<a href="" class="home" v-on:click="toggleActive('parkVelo')">Parking vélo</a>
-		<a href="#" class="projects" v-on:click="makeActive('parkMoto')">Parking moto</a>
-		<a href="" class="services" v-on:click="makeActive('pmr')">Accès PMR</a>
-		<a href="#" class="contact" v-on:click="makeActive('paiement')">Moyen paiement</a>
+		<a href="" v-on:click="toggleActive('parkVelo')">Parking vélo</a>
+		<a href="#"  v-on:click="makeActive('parkMoto')">Parking moto</a>
+		<a href=""  v-on:click="makeActive('pmr')">Accès PMR</a>
+		<a href="#"  v-on:click="makeActive('paiement')">Moyen paiement</a>
       </nav>   
 
-    <p>You chose <b>{{active}}</b></p>  
 
     <!--
     <li v-for="service in services" v-on:click="toggleActive(service)" v-bind:key="{ 'active': service.active}">
@@ -34,13 +37,16 @@
 <script>
 export default {
   
- el: '#main',
-
-	
-	data: {
+ name: 'Search',
+ props: {
+    msg: String,
+	parkin: null
+  },
+/*
+ data: {
+	park: null,
     msg: String,
     active: 'pmr',
-    park: null,
     services: [
     {
       name: 'parkVelo',
@@ -58,7 +64,7 @@ export default {
   ]
 	},
 
-	methods: {
+ methods: {
 		makeActive: function(item){
 		
 			this.active = item;
@@ -67,8 +73,8 @@ export default {
             s.active = !s.active;
     	},
     		
-	}
-}
+	}  */
+} 
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
