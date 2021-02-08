@@ -12,6 +12,9 @@
     <br>
     <input v-on:click="research()" type="submit" value="Rechercher">
     <br>
+    <pre>{{info}}</pre>
+    
+    <br>
      <Search msg="Résultat : "/>
   </div>
 </template>
