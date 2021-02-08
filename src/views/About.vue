@@ -1,5 +1,5 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h1>C'est un projet par forcement très utile mais bon ça permet de se familiarisé avec Vuejs</h1>
   </div>
 </template>

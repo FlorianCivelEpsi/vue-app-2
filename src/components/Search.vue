@@ -1,15 +1,6 @@
 <template>
   <div id="app">
 	      <h1>{{ msg }}</h1>
-
-	  
-
-    <p>
-      Veuillez rechercher votre position ou parking spécifique : 
-    </p>
-    
-	
-     
         
     <!-- 
 	  <nav v-bind:class="active" v-on:click.prevent>
@@ -19,10 +10,9 @@
 		<a href="#"  v-on:click="makeActive('paiement')">Moyen paiement</a>
       </nav>   
 	-->
-
+	{{test}}
 	<br>
-
-	
+	<pre>{{ info }}</pre>
     <!--
     <li v-for="service in services" v-on:click="toggleActive(service)" v-bind:key="{ 'active': service.active}">
 
@@ -42,40 +32,20 @@ export default {
  name: 'Search',
  props: {
     msg: String,
-	parkin: null
+	url: 'https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_parkings-publics-nantes&q=',
+	namePark: 'Parking%20Cit%C3%A9%20des%20Congr%C3%A8s'
+  },  
+  methods: {
+	  researche(){
+		    axios
+            .get(url + namePark)
+            .then(response => (this.info = response.data))
+            .catch(error => console.log(error))
+	  }
   },
-/*
- data: {
-	park: null,
-    msg: String,
-    active: 'pmr',
-    services: [
-    {
-      name: 'parkVelo',
-      active:true
-    },{
-      name: 'parkMoto', 
-      active:false
-    },{
-      name: 'pmr',
-      active:true
-    },{
-      name: 'paiement',
-      active:false
-    }
-  ]
-	},
+	 
+     
 
- methods: {
-		makeActive: function(item){
-		
-			this.active = item;
-    },
-    toggleActive: function(s){
-            s.active = !s.active;
-    	},
-    		
-	}  */
 } 
 </script>
 
