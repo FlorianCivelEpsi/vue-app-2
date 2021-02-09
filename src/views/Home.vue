@@ -11,12 +11,14 @@
     {{parkin}}
     <br>
     <input v-on:click="research()" type="submit" value="Rechercher">
-    <br>
-    <pre>{{info}}</pre>
+  
     <pre></pre>
     <!--<pre>{{info.records[0].fields.telephone}}</pre> -->
     <br>
-     <Search :info="infos" msg="Résultat : "/>
+    <li v-if="afficheSearch == 'ok'">
+     <Search :info="info" msg="Résultat : "/>
+ 
+    </li>
   </div>
 </template>
 
@@ -36,6 +38,7 @@ export default {
 nameP: 'Parking Cité des Congrès',
 parkin: null,
 info : null,
+afficheSearch: null,
     }
     
   },
@@ -56,6 +59,7 @@ info : null,
             })
             .then(response => (this.info = response.data))
             .catch(error => console.log(error))
+            this.afficheSearch = 'ok';
             return info, test;
     }, 
     } 

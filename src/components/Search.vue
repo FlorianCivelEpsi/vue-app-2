@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-	      <h1>{{ msg }}</h1>
-        
+	      <h1>Réusltat : </h1>
+        <br>
     <!-- 
 	  <nav v-bind:class="active" v-on:click.prevent>
 		<a href="" v-on:click="toggleActive('parkVelo')">Parking vélo</a>
@@ -10,9 +10,19 @@
 		<a href="#"  v-on:click="makeActive('paiement')">Moyen paiement</a>
       </nav>   
 	-->
-    
-	{{infos}}
-	{{inf}}
+	<br>
+	<p>Nom : {{info.parameters.q}} </p>
+	<br>
+    <p>Téléphone : {{info.records[0].fields.telephone}} </p>
+	<br>
+	<p>Présentation : {{info.records[0].fields.presentation}} </p>
+	<br>
+	<p>Accès transport en commun : {{info.records[0].fields.acces_transports_communs}} </p>
+	<br>
+    <p>Localisation : {{info.records[0].fields.location}} </p>
+	<br>
+	
+	
     <!--
     <li v-for="service in services" v-on:click="toggleActive(service)" v-bind:key="{ 'active': service.active}">
 
@@ -27,18 +37,12 @@
 </template>
 
 <script>
-import axios from 'axios';
+/* import axios from 'axios'; */
 
 export default {
   
  name: 'Search',
- props: {
-	inf: "infos",
-    msg: String,
-	infos: null,
-	url: 'https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_parkings-publics-nantes&q=',
-	namePark: 'Parking%20Cit%C3%A9%20des%20Congr%C3%A8s'
-  },  
+props:["info"],
   
   methods: {
 	
@@ -120,9 +124,9 @@ export default {
 	}
 
 	p{
-		font-size:22px;
+		/*font-size:22px;
 		font-weight:bold;
-		color:#7d9098;
+		color:#7d9098; */
 	}
 
 	p b{
