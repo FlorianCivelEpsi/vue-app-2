@@ -11,7 +11,8 @@
       </nav>   
 	-->
     
-	
+	{{infos}}
+	{{inf}}
     <!--
     <li v-for="service in services" v-on:click="toggleActive(service)" v-bind:key="{ 'active': service.active}">
 
@@ -32,10 +33,13 @@ export default {
   
  name: 'Search',
  props: {
+	inf: "infos",
     msg: String,
+	infos: null,
 	url: 'https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_parkings-publics-nantes&q=',
 	namePark: 'Parking%20Cit%C3%A9%20des%20Congr%C3%A8s'
   },  
+  
   methods: {
 	
   },

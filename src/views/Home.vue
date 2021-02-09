@@ -3,7 +3,7 @@
     <img alt="Vue logo" src="../assets/parking.jpeg" height="250px" width="300px;">
    
     <p>
-      Veuillez rechercher votre position ou parking spécifique : 
+      Veuillez rechercher votre position ou parking spécifique : (Parking Cité des Congrès)
     </p>
     <br>
     <input v-model = "parkin" placeholder="Nom parking">
@@ -16,7 +16,7 @@
     <pre></pre>
     <!--<pre>{{info.records[0].fields.telephone}}</pre> -->
     <br>
-     <Search msg="Résultat : "/>
+     <Search :info="infos" msg="Résultat : "/>
   </div>
 </template>
 
@@ -29,10 +29,15 @@ import axios from 'axios';
 export default {
   name: 'Home',
     props: {
-  info: null,
-  test: null,
-  url: 'https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_parkings-publics-nantes&q=',
-  namePark: 'Parking%20Cit%C3%A9%20des%20Congr%C3%A8s',
+
+  },
+  data(){
+    return{
+nameP: 'Parking Cité des Congrès',
+parkin: null,
+info : null,
+    }
+    
   },
  
   components: {
@@ -42,8 +47,13 @@ export default {
    
   methods: {
     research(){
+           let nomParking = this.parkin;
 					 axios
-            .get('https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_parkings-publics-nantes&q=Parking%20Cit%C3%A9%20des%20Congr%C3%A8s')
+            .get('https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_parkings-publics-nantes',{
+              params:{
+                q: nomParking,
+              }
+            })
             .then(response => (this.info = response.data))
             .catch(error => console.log(error))
             return info, test;
