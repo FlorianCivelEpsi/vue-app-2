@@ -11,13 +11,11 @@ export default {
   name: "HereMap",
   props: {
     center: Object
-    // center object { lat: 40.730610, lng: -73.935242 }
   },
   data() {
     return {
       platform: null,
-      apikey: "{Replace this with HERE API KEY}"
-      // You can get the API KEY from developer.here.com
+      apikey: "{365zhQNXplAIm_ROAHnuGEGWvn1h-OkQ58WUqLqe9mY}"
     };
   },
   async mounted() {
@@ -38,7 +36,7 @@ export default {
 
       // Instantiate (and display) a map object:
       var map = new H.Map(mapContainer, maptypes.vector.normal.map, {
-        zoom: 9,
+        zoom: 7,
         center: this.center
         // center object { lat: 40.730610, lng: -73.935242 }
       });

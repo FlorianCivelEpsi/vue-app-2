@@ -1,14 +1,14 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4d6f385c2c5c0f80ad4e",
-    "url": "/vue-app-2/css/app.37f2f1db.css"
+    "revision": "daa3ac2d5d3096de6b91",
+    "url": "/vue-app-2/css/app.a17f76c2.css"
   },
   {
     "revision": "a940bb3aedb85ccba794904d63e4592d",
     "url": "/vue-app-2/img/parking.a940bb3a.jpeg"
   },
   {
-    "revision": "0a1a0b12b82ae8e92261da9a1e88a201",
+    "revision": "064ca516145e3dacbb7ca22ccb59dc48",
     "url": "/vue-app-2/index.html"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/vue-app-2/js/about.4075248b.js"
   },
   {
-    "revision": "4d6f385c2c5c0f80ad4e",
-    "url": "/vue-app-2/js/app.ce3f8209.js"
+    "revision": "daa3ac2d5d3096de6b91",
+    "url": "/vue-app-2/js/app.141dc74e.js"
   },
   {
     "revision": "c9ee9e47051490b89037",
