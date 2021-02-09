@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["about"],{f820:function(e,t,n){"use strict";n.r(t);var a=function(){var e=this,t=e.$createElement;e._self._c;return e._m(0)},r=[function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("div",{staticClass:"about"},[n("h1",[e._v("C'est un projet par forcement très utile mais bon ça permet de se familiariser avec Vuejs")])])}],s=n("2877"),u={},i=Object(s["a"])(u,a,r,!1,null,null,null);t["default"]=i.exports}}]);
+//# sourceMappingURL=about.4075248b.js.map

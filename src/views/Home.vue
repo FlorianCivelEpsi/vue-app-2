@@ -17,6 +17,7 @@
     <br>
     <li v-if="afficheSearch == 'ok'">
      <Search :info="info" msg="Résultat : "/>
+     <HereMap  :center="center" />
  
     </li>
   </div>
@@ -27,6 +28,8 @@
 // @ is an alias to /src
 import Search from '@/components/Search.vue'
 import axios from 'axios';
+import HereMap from '@/components/HereMap'
+
 
 export default {
   name: 'Home',
@@ -39,12 +42,17 @@ nameP: 'Parking Cité des Congrès',
 parkin: null,
 info : null,
 afficheSearch: null,
+center:{ 
+    lat: 47.212901665, 
+    lng:  -1.543971274
+    }
     }
     
   },
  
   components: {
-    Search
+    Search,
+    HereMap,
   },
         
    
