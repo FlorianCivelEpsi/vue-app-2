@@ -3,7 +3,7 @@
     <img alt="Vue logo" src="../assets/parking.jpeg" height="250px" width="300px;">
    
     <p>
-      Veuillez rechercher un parking : (Parking Cité des Congrès, Parking Gare Château, Parking Tour Bretagne)
+      Veuillez rechercher un parking : (ex : Parking Cité des Congrès, Parking Gare Château, Parking Tour Bretagne, etc...)
     </p>
     <br>
     <input v-model = "parkin" placeholder="Nom parking">
@@ -13,13 +13,14 @@
     <br>
     <input v-on:click="research()" type="submit" value="Rechercher">
    <br>
-  
+   <br>
+      <div id="inf">
     <!--<pre>{{info.records[0].fields.telephone}}</pre> -->
-    <br>
-    <li v-if="afficheSearch == 'ok'">
+    <li id="sit" v-if="afficheSearch == 'ok'">
      <Search :info="info" msg="Résultat : "/> 
         <input v-on:click="localise()" type="submit" value="Situer">
     </li>
+    </div>
      <li v-if="situer == 'ok'">
      <HereMap  :center="center" />
      </li>
@@ -79,3 +80,25 @@ center:{
 
 }
 </script>
+<style scoped>
+#inf{
+  background-color:  #358fda;
+  color: aliceblue;
+
+}
+#sit{
+  padding-bottom: 20px;
+
+}
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #10597a;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+    border-radius: 10px;
+}
+  
+</style>
