@@ -1,7 +1,6 @@
 
 <template>
   <div id="map">
-  <!--In the following div the HERE Map will render-->
     <div id="mapContainer" style="height:600px;width:100%" ref="hereMap"></div>
   </div>
 </template>
@@ -31,24 +30,23 @@ export default {
 
       const mapContainer = this.$refs.hereMap;
       const H = window.H;
-      // Obtain the default map types from the platform object
       var maptypes = this.platform.createDefaultLayers();
 
       // Instantiate (and display) a map object:
       var map = new H.Map(mapContainer, maptypes.vector.normal.map, {
-        zoom: 9,
+        zoom: 6,
         center: this.center
-        // center object { lat: 40.730610, lng: -73.935242 }
+         
       });
 
+      
       addEventListener("resize", () => map.getViewPort().resize());
 
-      // add behavior control
       new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
 
-      // add UI
+
+
       H.ui.UI.createDefault(map, maptypes);
-      // End rendering the initial map
     }
   }
 };

@@ -8,14 +8,11 @@
     <br>
     <input v-model = "parkin" placeholder="Nom parking">
     <br>
-    {{parkin}}
-    <br>
     <br>
     <input v-on:click="research()" type="submit" value="Rechercher">
    <br>
    <br>
       <div id="inf">
-    <!--<pre>{{info.records[0].fields.telephone}}</pre> -->
     <li id="sit" v-if="afficheSearch == 'ok'">
      <Search :info="info" msg="Résultat : "/> 
         <input v-on:click="localise()" type="submit" value="Situer">
@@ -29,7 +26,6 @@
 
 
 <script>
-// @ is an alias to /src
 import Search from '@/components/Search.vue'
 import axios from 'axios';
 import HereMap from '@/components/HereMap.vue'
@@ -69,6 +65,7 @@ center:{
             .then(response => (this.info = response.data))
             .catch(error => console.log(error))
             this.afficheSearch = 'ok';
+            this.situer = 'hide';
             return info;
     }, 
     localise(){
@@ -100,5 +97,5 @@ input[type=button], input[type=submit], input[type=reset] {
   cursor: pointer;
     border-radius: 10px;
 }
-  
+
 </style>

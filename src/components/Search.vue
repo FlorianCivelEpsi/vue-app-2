@@ -19,7 +19,6 @@
 </template>
 
 <script>
-/* import axios from 'axios'; */
 export default {
   
  name: 'Search',
@@ -34,7 +33,6 @@ props:["info"],
 } 
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
  <style scoped>
 
 
@@ -44,10 +42,6 @@ props:["info"],
 		text-align:center;
 
 	}
-
-
-
-
 
 	p b{
 		color:#ffffff;
